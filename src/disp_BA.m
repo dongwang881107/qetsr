@@ -6,8 +6,8 @@ function disp_BA()
     f = figure('Visible','off');
     scrsz = get(0,'ScreenSize');
 
-    subplot(6,2,1);plotBA('../out/dce_Zero-filled_out.mat','Zero Filled','Kt');
-    subplot(6,2,2);plotBA('../out/dce_Zero-filled_out.mat','Zero Filled','ve');
+    subplot(6,2,1);plotBA('../out/dce_ZeroFilled_out.mat','Zero Filled','Kt');
+    subplot(6,2,2);plotBA('../out/dce_ZeroFilled_out.mat','Zero Filled','ve');
     subplot(6,2,3);plotBA('../out/dce_FT_out.mat','FT','Kt');
     subplot(6,2,4);plotBA('../out/dce_FT_out.mat','FT','ve');
     subplot(6,2,5);plotBA('../out/dce_WT_out.mat','WT','Kt');
@@ -22,7 +22,7 @@ function disp_BA()
     set(gcf,'Position',[scrsz(1),scrsz(2),1*scrsz(3)/2,scrsz(4)]);
     set(gcf,'PaperPositionMode','auto');
 %     saveas(gcf,'../ms/figure4.eps','psc2');
-    print -depsc2 ../ms/figure4.eps;
+    print -depsc2 ../ms/figure5.eps;
     close(f);
 
 end

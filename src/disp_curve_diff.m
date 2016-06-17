@@ -6,7 +6,7 @@ function disp_curve_diff()
 
     load ../out/dce_ori.mat;
     img_ori = shiftdim(DCEdata,1);
-    load ../out/dce_Zero-filled.mat;
+    load ../out/dce_ZeroFilled.mat;
     img_zerofill = shiftdim(DCEdata,1);
     load ../out/dce_WT.mat;
     img_wt = shiftdim(DCEdata,1);
@@ -89,7 +89,7 @@ function disp_curve_diff()
     ylabel('Signal Diff','fontsize',fs);
     title('(b)','fontsize',fs);
     
-    print -depsc2 ../ms/figure5.eps;
+    print -depsc2 ../ms/figure6.eps;
     close(f);
     
 end

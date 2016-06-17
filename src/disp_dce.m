@@ -8,7 +8,7 @@ function disp_dce(i)
     img_ori = img_ori(:,1:128,:);
     scale = max(img_ori(:));
     img_ori = img_ori/scale;
-    load ../out/dce_Zero-filled.mat;
+    load ../out/dce_ZeroFilled.mat;
     zerofill = shiftdim(DCEdata,1);
     zerofill = zerofill(:,1:128,:)/scale;
     load ../out/dce_FT.mat;

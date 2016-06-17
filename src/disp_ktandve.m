@@ -7,7 +7,7 @@ function disp_ktandve()
     load ../out/dce_ori_out.mat;
     kt_ori = Kt;
     ve_ori = ve;
-    load ../out/dce_Zero-filled_out.mat;
+    load ../out/dce_ZeroFilled_out.mat;
     kt_zerofill = Kt;
     ve_zerofill = ve;
     load ../out/dce_FT_out.mat;
@@ -66,6 +66,6 @@ function disp_ktandve()
     axis on
     colormap('parula');
     
-    print -depsc2 ../ms/figure3.eps;
+    print -depsc2 ../ms/figure4.eps;
     close(f);
 end

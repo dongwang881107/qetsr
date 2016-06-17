@@ -38,7 +38,7 @@ end
 clear i;
 
 %% Initialize output variables
-Mode = {'Zero Filled','L1','FT','WT','TV','TGV','NN'};
+Mode = {'ZeroFilled','L1','FT','WT','TV','TGV','NN'};
 mode_num = length(Mode);
 pick = [1,3,4,5,6,7]; % Number of mode selected
 
@@ -59,7 +59,7 @@ for i = 1:mask_num
         b = A(img);
         zerofill = At(b);
         
-        if strcmp(mode,'Zero Filled')
+        if strcmp(mode,'ZeroFilled')
             disp(['Running ',num2str(i),'th mask']);
             disp('Zerofill');
             ser(i,pick(j)) = -20*log10(norm((abs(zerofill(:)) - img(:)))/norm((img(:))));
@@ -95,5 +95,5 @@ name = ['../out/result_v0.4_',under,'_',num2str(mask_num),'.mat'];
 save(name,'-v7.3','ser','cccKt','cccve','Mask','tumorKt','tumorve');
 
 %% Plot the figures and tables in the paper
-disp_figure(m,n,d,Mode,pick,name);
-disp_table(Mode,pick,name);
+% disp_figure(m,n,d,Mode,pick,name);
+% disp_table(Mode,pick,name);
