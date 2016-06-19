@@ -1,44 +1,50 @@
-Quantitative Evaluation of Temporal Regularizers in Compressed Sensing Dynamic Contrast Enhanced MRI of the Breast
+# Replication Code for "Quantitative Evaluation of Temporal Regularizers in Compressed Sensing Dynamic Contrast Enhanced MRI of the Breast"
 
-##How to use this package?
+## How to use this package:
 
-####1. Install Matlab
-The CS reconstructions in the paper used the software **Matlab**. Please install Matlab [here](http://www.mathworks.com/products/matlab/index.html?s_tid=gn_loc_drop). The version we used in the paper is R2015b.
-We recommend using R2015b or above. Using former versions may cause warnings or errors.
+### 1. Install Matlab
 
-####2. Install julia
-The DCE analysis in the paper used the software **Julia**. Julia is a completely free software that looks like Matlab, but runs much fater. In particular, for the problem of DCE MRI, Julia's simple and flexible parallel computing model allows almost perfect parallelization of the nonlinear least squares fitting problem.
+The CS reconstructions were written in MATLAB. To install Matlab, [here](http://www.mathworks.com/products/matlab/index.html). Version R2015b was used for the paper. We recommend using R2015b or above. Using former versions may cause warnings or errors.
 
-Please install Julia [here](http://julialang.org/). The version we used in the paper is v0.4.3. We recommend using v0.4.2 or above. Using former versions may cause warnings or errors.
+### 2. Install Julia
 
-####3. Install DCEMRI.jl
-**DCEMRI.jl** is a fast, validated open source toolkit for dynamic contrast enhanced MRI analysis. In the paper, we used DCEMRI.jl toolkit to do the DCE analysis. The installation of the toolkit is very simple and the tuturial is [here](https://github.com/davidssmith/DCEMRI.jl#as-a-shell-command).
+The DCE analysis in the paper uses Julia. Julia is a completely free software that looks like Matlab, but runs much faster in many cases. In particular, for the problem of DCE MRI, Julia's simple and flexible parallel computing model allows almost perfect parallelization of the nonlinear least squares fitting problem.
 
-####4. Specify the path in julia.m
-Before running the demo, you need to specify the julia path in the **julia.m** file depending on what operating system you are using and where you install your julia. Here is an example of the path:
+Julia can be obtained from [http://julialang.org/](http://julialang.org/). The version we used in the paper is v0.4.3. We recommend using v0.4.2 or above. Using earlier versions may cause warnings or errors.
 
-For MacOS, the Matlab code is
+### 3. Install `DCEMRI.jl`
+
+`DCEMRI.jl` is a fast, validated open source toolkit for dynamic contrast enhanced MRI analysis. In the paper, we used DCEMRI.jl toolkit to do the DCE analysis. To install, start Julia, and at the command prompt type `Pkg.add("DCEMRI")`.
+
+### 4. Specify the path in `src/julia.m`
+
+Before running the demo, you need to connect the MATLAB scripts to Julia. This is done through the file `src/julia.m`.  Inside this file, specify the path to your Julia binary. Here is an example of the path:
+
+For MacOS,
 
 ``julia_path = '/Applications/Julia-0.4.2.app/Contents/Resources/julia/bin/julia';``
 
-For Linux, the Matlab code is 
+For Linux,
 
 ``julia_path = '/home/dss/git/julia/julia';``
 
-For Windows, the Matlab code is 
+For Windows,
 
 ``julia_path = 'C:\windows\julia\bin\julia';``
 
-####5. Running the demo
-After intalling the softwares and specifying the julia path, you are ready to run the demo. Congratulations!
-The m-file you should run is **rundemo.m**. Here are some paremeters you can initialize and the numbers are by default:
+### 5. Run the Demo
 
-- mask_num = 200; % Number of generated masks
-- width = 10; % Central window width
-- accel = 8; % Acceleration factor
-- pick = [1 3 4 5 6 7]; % Mode selected
+Now you are ready to run the demo. Congratulations! The m-file you should run is `src/rundemo.m`. Inside this file, you can set the run paremeters. The default values are
 
-Here is an output of rundemo (mask_num = 1, width = 10, accel = 8, and pick = [1 3 4 5 6 7])
+```
+mask_num = 200; % Number of generated masks
+width = 10; % Central window width
+accel = 8; % Acceleration factor
+pick = [1 3 4 5 6 7]; % Mode selected
+```
+
+Here is an the output of rundemo using `(mask_num = 1, width = 10, accel = 8, and pick = [1 3 4 5 6 7])`. The deprecation warnings can be ignored and have no effect on the result. It takes about 1 day to run the demo on a typical workstation as of 2016.
+
 ```
 >> rundemo
 running models
@@ -592,7 +598,7 @@ ans =
      0
 
 ```
-All experiments were run on a dual Xeon E5-2665 2.40 GHz workstation with 20 GB of RAM with MATLAB 2015b (Mathworks, Natick, MA) and Julia 0.4.3. It takes about 1 day to run the demo by default.
 
-##Funding Resource
-Financial support from NCI/NIH K25 CA176219, NCI/NIH U01 CA142565, and the National Nature Science Foundation of China (Grants 91330101 and 11531005). TEY is the W.A. “Tex” Moncrief Professor of Computational Oncology and is a CPRIT Scholar in Cancer Research.
+## Funding Sources
+
+Financial support from NCI/NIH K25 CA176219, NCI/NIH U01 CA142565, and the National Nature Science Foundation of China (Grants 91330101 and 11531005).
