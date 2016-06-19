@@ -2,23 +2,23 @@
 
 ## How to use this package:
 
-### 1. Install Matlab
+### 1. Install MATLAB
 
-The CS reconstructions were written in MATLAB. To install Matlab, [here](http://www.mathworks.com/products/matlab/index.html). Version R2015b was used for the paper. We recommend using R2015b or above. Using former versions may cause warnings or errors.
+The CS reconstructions were written in [MATLAB](http://www.mathworks.com/products/matlab/index.html). Version R2015b was used for the paper. We recommend using R2015b or above. Using former versions may cause warnings or errors.
 
 ### 2. Install Julia
 
-The DCE analysis in the paper uses Julia. Julia is a completely free software that looks like Matlab, but runs much faster in many cases. In particular, for the problem of DCE MRI, Julia's simple and flexible parallel computing model allows almost perfect parallelization of the nonlinear least squares fitting problem.
+The DCE analysis in the paper uses Julia. Julia is a completely free software that looks like MATLAB, but runs much faster in many cases. In particular, for the problem of DCE MRI, Julia's simple and flexible parallel computing model allows almost perfect parallelization of the nonlinear least squares fitting problem.
 
 Julia can be obtained from [http://julialang.org/](http://julialang.org/). The version we used in the paper is v0.4.3. We recommend using v0.4.2 or above. Using earlier versions may cause warnings or errors.
 
 ### 3. Install `DCEMRI.jl`
 
-`DCEMRI.jl` is a fast, validated open source toolkit for dynamic contrast enhanced MRI analysis. In the paper, we used DCEMRI.jl toolkit to do the DCE analysis. To install, start Julia, and at the command prompt type `Pkg.add("DCEMRI")`.
+`DCEMRI.jl` is a fast, validated open source toolkit for dynamic contrast enhanced MRI analysis. In the paper, we used DCEMRI.jl toolkit to do the DCE analysis. To install, start Julia, and at the `Julia>` prompt type `Pkg.add("DCEMRI")`.
 
 ### 4. Specify the path in `src/julia.m`
 
-Before running the demo, you need to connect the MATLAB scripts to Julia. This is done through the file `src/julia.m`.  Inside this file, specify the path to your Julia binary. Here is an example of the path:
+Before running the demo, you need to connect the MATLAB scripts to Julia. This is done through the file `src/julia.m`.  Inside this file, specify the path to your Julia binary. Here is an example of the path for various systems:
 
 For MacOS,
 
